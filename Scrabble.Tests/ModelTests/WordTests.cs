@@ -12,14 +12,15 @@ namespace Scrabble.Test
     public void Word_MakesAnInstanceOfWordClass_String()
     {
       Word newWord = new Word("Hello");
-      Assert.AreEqual("HELLO", newWord.UserWord);
+      Assert.AreEqual("Hello", newWord.UserWord);
     }
 
     [TestMethod]
     public void Word_MakesWordAllUppercase_String()
     {
       Word newWord = new Word("Hello");
-      Assert.AreEqual("HELLO", newWord.UserWord);
+      newWord.WordChecker();
+      Assert.AreEqual("HELLO", newWord.UpperWord);
     }
 
     [TestMethod]

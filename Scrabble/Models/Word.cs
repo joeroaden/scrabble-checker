@@ -6,14 +6,18 @@ namespace Scrabble.Models
   {
     public string UserWord { get; set; }
     public char[] CharacterArray { get; set; }
+    public string UpperWord { get; set; }
+
 
     public Word(string userWord)
     {
-      UserWord = userWord.ToUpper();
+      UserWord = userWord;
     }
 
-    public void  WordChecker () {
-      CharacterArray = UserWord.ToCharArray();
+    public void  WordChecker () 
+    {
+      UpperWord = UserWord.ToUpper();
+      CharacterArray = UpperWord.ToCharArray();
     }
   }
 }
