@@ -4,10 +4,17 @@ namespace Scrabble.Models
 {
   public class Word
   {
+    private static char[] _onePoint = {};
+
     public string UserWord { get; set; }
     public char[] CharacterArray { get; set; }
     public string UpperWord { get; set; }
     public int Score { get; set; }
+    
+    public static char[] GetAll()
+    {
+      return _onePoint;
+    }
 
 
     public Word(string userWord)
@@ -20,5 +27,7 @@ namespace Scrabble.Models
       UpperWord = UserWord.ToUpper();
       CharacterArray = UpperWord.ToCharArray();
     }
+
+
   }
 }

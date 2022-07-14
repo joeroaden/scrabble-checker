@@ -38,5 +38,13 @@ namespace Scrabble.Test
       Word newWord = new Word("Hello");
       Assert.AreEqual( 0, newWord.Score);
     }
+
+    [TestMethod]
+    public void GetAll_GiveWordClassStaticArrays_Array()
+    {
+      char[] onePoint = Word.GetAll();
+      char[] onePointCompare = { 'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T' };
+      CollectionAssert.AreEqual(onePointCompare, onePoint);
+    }
   }
 }
