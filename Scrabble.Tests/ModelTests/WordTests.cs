@@ -31,5 +31,12 @@ namespace Scrabble.Test
       char [] checkArray = {'H', 'E', 'L', 'L', 'O'};
       CollectionAssert.AreEqual(checkArray, newWord.CharacterArray);
     }
+
+    [TestMethod]
+    public void Word_GiveWordInstanceAScoreProperty_Int()
+    {
+      Word newWord = new Word("Hello");
+      Assert.AreEqual( 0, newWord.Score);
+    }
   }
 }
