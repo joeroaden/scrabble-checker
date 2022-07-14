@@ -42,7 +42,7 @@ namespace Scrabble.Test
     [TestMethod]
     public void GetAll_GiveWordClassStaticArrays_Array()
     {
-      char[] onePoint = Word.GetAll();
+      char[] onePoint = Word.OnePoint;
       char[] onePointCompare = { 'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T' };
       CollectionAssert.AreEqual(onePointCompare, onePoint);
     }
