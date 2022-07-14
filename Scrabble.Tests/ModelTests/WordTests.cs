@@ -39,13 +39,13 @@ namespace Scrabble.Test
       Assert.AreEqual( 0, newWord.Score);
     }
 
-    [TestMethod]
-    public void GetAll_GiveWordClassStaticArrays_Array()
-    {
-      char[] onePoint = Word.OnePoint;
-      char[] onePointCompare = { 'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T' };
-      CollectionAssert.AreEqual(onePointCompare, onePoint);
-    }
+    // [TestMethod]
+    // public void GetAll_GiveWordClassStaticArrays_Array()
+    // {
+    //   char[] onePoint = Word.OnePoint;
+    //   char[] onePointCompare = { 'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T' };
+    //   CollectionAssert.AreEqual(onePointCompare, onePoint);
+    // }
 
     [TestMethod]
     public void WordScorer_ScoreAWord_Int()

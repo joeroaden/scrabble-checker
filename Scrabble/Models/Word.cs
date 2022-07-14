@@ -1,16 +1,11 @@
 using System;
+using System.Collections.Generic;
 
 namespace Scrabble.Models 
 {
   public class Word
   {
-    public static char[] OnePoint = { 'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T' };
-    public static char[] TwoPoint = { 'D', 'G' };
-    public static char[] ThreePoint = { 'B', 'C', 'M', 'P' };
-    public static char[] FourPoint = { 'F', 'H', 'V' , 'W', 'Y'};
-    public static char[] FivePoint = { 'K' };
-    public static char[] EightPoint = { 'J', 'K' };
-    public static char[] TenPoint = { 'Q', 'Z' };
+    public Dictionary<char, int> pointDictionary = new Dictionary<char, int>{ {'A', 1}, {'E', 1}, {'I', 1}, {'O', 1}, {'U', 1}, {'L', 1}, {'N', 1}, {'R', 1}, {'S', 1}, {'T', 1}, {'D', 2}, {'G', 2}, {'B', 3}, {'C', 3},{'M', 3}, {'P', 3}, {'F', 4}, {'H', 4}, {'V', 4}, {'W', 4}, {'Y', 4}, {'K',5}, {'X',8}, {'J',8}, {'Q',10}, {'Z', 10}};   
 
     public string UserWord { get; set; }
     public char[] CharacterArray { get; set; }
@@ -32,53 +27,11 @@ namespace Scrabble.Models
     {
       for (int index = 0; index < CharacterArray.Length; index++)
       {
-        for (int indexOnePoint = 0; indexOnePoint < OnePoint.Length; indexOnePoint++)
+        foreach(var item in pointDictionary)
         {
-          if ( CharacterArray[index] == OnePoint[indexOnePoint])
+          if (CharacterArray[index] == item.Key)
           {
-            Score += 1;
-          }
-        }
-        for (int indexTwoPoint = 0; indexTwoPoint < TwoPoint.Length; indexTwoPoint++)
-        {
-          if ( CharacterArray[index] == TwoPoint[indexTwoPoint])
-          {
-            Score += 2;
-          }
-        }
-        for (int indexThreePoint = 0; indexThreePoint < ThreePoint.Length; indexThreePoint++)
-        {
-          if ( CharacterArray[index] == ThreePoint[indexThreePoint])
-          {
-            Score += 3;
-          }
-        }
-        for (int indexFourPoint = 0; indexFourPoint < FourPoint.Length; indexFourPoint++)
-        {
-          if ( CharacterArray[index] == FourPoint[indexFourPoint])
-          {
-            Score += 4;
-          }
-        }
-        for (int indexFivePoint = 0; indexFivePoint < FivePoint.Length; indexFivePoint++)
-        {
-          if ( CharacterArray[index] == FivePoint[indexFivePoint])
-          {
-            Score += 5;
-          }
-        }
-        for (int indexEightPoint = 0; indexEightPoint < EightPoint.Length; indexEightPoint++)
-        {
-          if ( CharacterArray[index] == EightPoint[indexEightPoint])
-          {
-            Score += 8;
-          }
-        }
-        for (int indexTenPoint = 0; indexTenPoint < TenPoint.Length; indexTenPoint++)
-        {
-          if ( CharacterArray[index] == TenPoint[indexTenPoint])
-          {
-            Score += 10;
+            Score += item.Value;
           }
         }
       }
