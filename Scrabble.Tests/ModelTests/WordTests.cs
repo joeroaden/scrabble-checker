@@ -46,5 +46,13 @@ namespace Scrabble.Test
       char[] onePointCompare = { 'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T' };
       CollectionAssert.AreEqual(onePointCompare, onePoint);
     }
+
+    [TestMethod]
+    public void WordScorer_ScoreAWord_Int()
+    {
+      Word newWord = new Word("Hello");
+      newWord.WordScorer();
+      Assert.AreEqual(8, newWord.Score);
+    }
   }
 }
