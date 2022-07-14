@@ -13,7 +13,6 @@ namespace Scrabble.Models
     public Word(string userWord)
     {
       UserWord = userWord;
-      Score = 1;
     }
 
     public void  WordChecker () 
