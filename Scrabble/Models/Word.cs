@@ -4,7 +4,7 @@ namespace Scrabble.Models
 {
   public class Word
   {
-    private static char[] _onePoint = {};
+    private static char[] _onePoint = { 'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T' };
 
     public string UserWord { get; set; }
     public char[] CharacterArray { get; set; }
