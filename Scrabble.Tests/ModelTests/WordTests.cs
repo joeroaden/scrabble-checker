@@ -21,5 +21,14 @@ namespace Scrabble.Test
       Word newWord = new Word("Hello");
       Assert.AreEqual("HELLO", newWord.UserWord);
     }
+
+    [TestMethod]
+    public void WordChecker_MakeWordIntoCharArray_Array()
+    {
+      Word newWord = new Word("Hello");
+      newWord.WordChecker();
+      char [] checkArray = {'H', 'E', 'L', 'L', 'O'};
+      CollectionAssert.AreEqual(checkArray, newWord.CharacterArray);
+    }
   }
 }
