@@ -8,7 +8,7 @@ namespace Scrabble.Models
 
     public Word(string userWord)
     {
-      UserWord = "";
+      UserWord = userWord;
     }
   }
 }
