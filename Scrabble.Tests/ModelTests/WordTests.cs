@@ -14,5 +14,12 @@ namespace Scrabble.Test
       Word newWord = new Word("Hello");
       Assert.AreEqual("Hello", newWord.UserWord);
     }
+
+    [TestMethod]
+    public void Word_MakesWordAllUppercase_String()
+    {
+      Word newWord = new Word("Hello");
+      Assert.AreEqual("HELLO", newWord.UserWord);
+    }
   }
 }
