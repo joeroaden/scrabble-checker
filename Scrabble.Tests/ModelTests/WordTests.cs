@@ -51,16 +51,18 @@ namespace Scrabble.Test
     public void WordScorer_ScoreAWord_Int()
     {
       Word newWord = new Word("Hello");
+      newWord.WordChecker();
       newWord.WordScorer();
       Assert.AreEqual(8, newWord.Score);
     }
+    
     [TestMethod]
     public void WordScorer_ScoreAnyWord_Int()
     {
       Word newWord = new Word("Zip");
+      newWord.WordChecker();
       newWord.WordScorer();
       Assert.AreEqual(14, newWord.Score);
-    }
-
+    }  
   }
 }
