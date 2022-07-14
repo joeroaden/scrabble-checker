@@ -12,7 +12,7 @@ namespace Scrabble.Test
     public void Word_MakesAnInstanceOfWordClass_String()
     {
       Word newWord = new Word("Hello");
-      Assert.AreEqual("Hello", newWord.UserWord);
+      Assert.AreEqual("HELLO", newWord.UserWord);
     }
 
     [TestMethod]
